@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: fenzhodraft
+    kubernetes.azure.com/generator: draft
+  name: fenzhodraft
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fenzhodraft
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: fenzhodraft
+    spec:
+      containers:
+      - image: fenzho0615.azurecr.io/fenzhodraft
+        imagePullPolicy: Always
+        name: fenzhodraft
+        ports:
+        - containerPort: 80
+        resources: {}
+status: {}
